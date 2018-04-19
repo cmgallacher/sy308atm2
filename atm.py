@@ -57,7 +57,8 @@ class atm:
         else: #they entered the correct pin
             sys.stdout.write("Authorized\n")
             currentuser = details[1].strip()
-            #self.sendBytes(str(currentuser))
+            currentuser = str(currentuser)
+            self.sendBytes(bytes(currentuser, "utf-8"))
             flag = 1
     while flag == 1:
 
@@ -79,9 +80,9 @@ class atm:
                 detailstr = ""
                 for item in details:
                     detailstr = detailstr + " " + str(item)
-                name = details[1].strip() + ".card"
-                f1 = open(name, "r+")
-                f1.write(detailstr)
+                    name = details[1].strip() + ".card"
+                    f1 = open(name, "r+")
+                    f1.write(detailstr)
             #check that the user has sufficient funds
             #if they do, subtract from their balance
             #do something

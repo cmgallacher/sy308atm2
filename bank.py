@@ -96,14 +96,17 @@ class bank:
   def handleRemote(self, inBytes):
     #print("\nFrom ATM: ", inBytes.decode("utf-8") )
     #self.sendBytes(inBytes)
-    #self.prompt()
+
     print("\n")
     queries = inBytes.decode("utf-8").split(" ")
     #print(queries[0])
     if queries[0] == "Alice":
-      print("received")
+      #print("received")
+      #start working on the logic for accepting commands from ATM to change the global variables below
 
 
+
+    self.prompt()
   def mainLoop(self):
     self.prompt()
 
